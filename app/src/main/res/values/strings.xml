@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Kamhome Pharmacy</string>
+
+    <string name="cortem1">A thin wrapper around a millisecond value that allows JDBC to identify this as an SQL DATE
+        value. A milliseconds value represents the number of milliseconds that have passed since January 1, 1970 00:00:00.000 GMT.
+        To conform with the definition of SQL DATE.
+        </string>
+    <string name="covidex">A RatingBar is an extension of SeekBar and ProgressBar that shows a rating in stars.
+        The user can touch/drag or use arrow keys to set the rating when using the default size RatingBar.
+        The smaller RatingBar style</string>
+    <string name="duocotexin">A TextView displays text to the user and optionally allows them to edit it.
+        A TextView is a complete text editor, however the basic class is configured to not allow editing.
+        </string>
+    <string name="mebendazole">The Android framework includes support for various cameras and camera features
+        available on devices, allowing you to capture pictures and videos in your applications.
+        This document discusses a quick, simple approach to image and video capture and outlines an advanced
+        approach for creating custom camera experiences for your users.</string>
+    <string name="panadol1">RecyclerView is the ViewGroup that contains the views corresponding to your data.
+        Its a view itself so you add RecyclerView into your layout the way you would add any other UI element.
+        Each individual element in the list is defined by a view holder object.
+    </string>
+    <string name="piliton">A TextView displays text to the user and optionally allows them to edit it.
+        A TextView is a complete text editor, however the basic class is configured to not allow editing.
+    </string>
+    <string name="probeta">A TextView displays text to the user and optionally allows them to edit it.
+        A TextView is a complete text editor, however the basic class is configured to not allow editing.
+    </string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+</resources>

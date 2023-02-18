@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "738280379263",
+    "project_id": "kamhome-pharmacy",
+    "storage_bucket": "kamhome-pharmacy.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:738280379263:android:82333259833964575ec04a",
+        "android_client_info": {
+          "package_name": "com.example.kamhomepharmacy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "738280379263-1cif0tad10urjusnmcjoba8cv4i03djl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXRgTMfes-pAcxN0HD6BG6oRC8ZEjla78"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "738280379263-1cif0tad10urjusnmcjoba8cv4i03djl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
