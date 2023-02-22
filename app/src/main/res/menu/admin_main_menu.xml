@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/user_nav_home"
+            android:icon="@drawable/chat"
+            android:title="Home" />
+        <item
+            android:id="@+id/user_nav_pharmacies"
+            android:icon="@drawable/chat"
+            android:title="Pharmacies" />
+        <item
+            android:id="@+id/user_nav_chat"
+            android:icon="@drawable/chat"
+            android:title="Chat" />
+        <item
+            android:id="@+id/user_nav_settings"
+            android:icon="@drawable/chat"
+            android:title="Settings" />
+        <item
+            android:id="@+id/user_nav_profile"
+            android:icon="@drawable/fullname"
+            android:title="Profile" />
+    </group>
+</menu>

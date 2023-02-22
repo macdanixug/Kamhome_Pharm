@@ -24,6 +24,7 @@
         <entry key="..\:/AndroidStudioProjects/KamhomePharmacy/app/src/main/res/drawable/search_bkg.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProjects/KamhomePharmacy/app/src/main/res/drawable/shop_drug.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProjects/KamhomePharmacy/app/src/main/res/drawable/white_background.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/KamhomePharmacy/app/src/main/res/layout/activity_admin_dashboard.xml" value="0.20416666666666666" />
         <entry key="..\:/AndroidStudioProjects/KamhomePharmacy/app/src/main/res/layout/activity_chat_box_dashboard.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProjects/KamhomePharmacy/app/src/main/res/layout/activity_detail.xml" value="0.2" />
         <entry key="..\:/AndroidStudioProjects/KamhomePharmacy/app/src/main/res/layout/activity_edit_profile.xml" value="0.20416666666666666" />
@@ -40,10 +41,13 @@
         <entry key="..\:/AndroidStudioProjects/KamhomePharmacy/app/src/main/res/layout/fragment_home.xml" value="0.25" />
         <entry key="..\:/AndroidStudioProjects/KamhomePharmacy/app/src/main/res/layout/fragment_prescription.xml" value="0.20416666666666666" />
         <entry key="..\:/AndroidStudioProjects/KamhomePharmacy/app/src/main/res/layout/fragment_profile.xml" value="0.20416666666666666" />
+        <entry key="..\:/AndroidStudioProjects/KamhomePharmacy/app/src/main/res/layout/header_menu.xml" value="0.20416666666666666" />
         <entry key="..\:/AndroidStudioProjects/KamhomePharmacy/app/src/main/res/layout/message_design.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProjects/KamhomePharmacy/app/src/main/res/layout/recycler_item.xml" value="0.22" />
         <entry key="..\:/AndroidStudioProjects/KamhomePharmacy/app/src/main/res/layout/slider_item.xml" value="0.20416666666666666" />
+        <entry key="..\:/AndroidStudioProjects/KamhomePharmacy/app/src/main/res/menu/admin_main_menu.xml" value="0.20416666666666666" />
         <entry key="..\:/AndroidStudioProjects/KamhomePharmacy/app/src/main/res/menu/bottom_menu.xml" value="0.25" />
+        <entry key="..\:/AndroidStudioProjects/KamhomePharmacy/app/src/main/res/menu/header_menu.xml" value="0.20416666666666666" />
       </map>
     </option>
   </component>

@@ -2,28 +2,36 @@ package com.example.kamhomepharmacy;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-
+import android.widget.Toast;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import android.widget.Toast;
 
-import java.util.Objects;
+
+
 
 public class Login extends AppCompatActivity {
 
     EditText loginUsername, loginPassword;
     Button loginButton;
     TextView signupRedirectText;
+
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +42,8 @@ public class Login extends AppCompatActivity {
         loginPassword = findViewById(R.id.login_password);
         loginButton = findViewById(R.id.login_button);
         signupRedirectText = findViewById(R.id.signupRedirectText);
+
+        mAuth = FirebaseAuth.getInstance();
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,32 +101,31 @@ public class Login extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                 if (snapshot.exists()) {
+                    loginUsername.setError(null);
+                    String passwordFromDB = snapshot.child(userUsername).child("password").getValue(String.class);
+
+                    if (passwordFromDB.equals(userPassword)) {
                         loginUsername.setError(null);
-                        String passwordFromDB = snapshot.child(userUsername).child("password").getValue(String.class);
 
-                        if (passwordFromDB.equals(userPassword)) {
-                            loginUsername.setError(null);
+                        String nameFromDB = snapshot.child(userUsername).child("name").getValue(String.class);
+                        String emailFromDB = snapshot.child(userUsername).child("email").getValue(String.class);
+                        String usernameFromDB = snapshot.child(userUsername).child("username").getValue(String.class);
 
-                            String nameFromDB = snapshot.child(userUsername).child("name").getValue(String.class);
-                            String emailFromDB = snapshot.child(userUsername).child("email").getValue(String.class);
-                            String usernameFromDB = snapshot.child(userUsername).child("username").getValue(String.class);
+                        Intent intent = new Intent(Login.this, UserDashboard.class);
 
-                            Intent intent = new Intent(Login.this, UserDashboard.class);
+                        intent.putExtra("name", nameFromDB);
+                        intent.putExtra("email", emailFromDB);
+                        intent.putExtra("username", usernameFromDB);
+                        intent.putExtra("password", passwordFromDB);
 
-                            intent.putExtra("name", nameFromDB);
-                            intent.putExtra("email", emailFromDB);
-                            intent.putExtra("username", usernameFromDB);
-                            intent.putExtra("password", passwordFromDB);
-
-                            startActivity(intent);
-                            finish();
-                        } else {
-                            loginPassword.setError("Invalid Credentials");
-                            loginPassword.requestFocus();
-                        }
+                        startActivity(intent);
+                        finish();
+                    } else {
+                        loginPassword.setError("Invalid Credentials");
+                        loginPassword.requestFocus();
+                    }
                 } else {
-                    loginUsername.setError("User does not exist");
-                    loginUsername.requestFocus();
+                    logIn();
                 }
 
 
@@ -128,5 +137,27 @@ public class Login extends AppCompatActivity {
 
             }
         });
+
     }
+
+    private void logIn() {
+        String email = loginUsername.getText().toString().trim();
+        String password = loginPassword.getText().toString().trim();
+
+        mAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            FirebaseUser user = mAuth.getCurrentUser();
+                            Intent intent = new Intent(Login.this, AdminDashboard.class);
+                            startActivity(intent);
+                            finish();
+                        } else {
+                            Toast.makeText(Login.this, "Login failed", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+    }
+
 }

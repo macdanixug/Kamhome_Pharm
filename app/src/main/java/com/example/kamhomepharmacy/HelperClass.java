@@ -2,7 +2,14 @@ package com.example.kamhomepharmacy;
 
 public class HelperClass {
 
-    String name, email, username, password;
+    String name;
+    String email;
+    String username;
+    String password;
+
+    public HelperClass(){
+
+    }
 
     public String getName() {
         return name;
@@ -43,6 +50,6 @@ public class HelperClass {
         this.password = password;
     }
 
-    public HelperClass() {
-    }
+
+
 }
