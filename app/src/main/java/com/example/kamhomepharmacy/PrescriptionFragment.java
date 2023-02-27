@@ -1,15 +1,21 @@
 package com.example.kamhomepharmacy;
 
-import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+
 import androidx.appcompat.widget.SearchView;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import android.os.Bundle;
+
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Toast;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class ViewDrugPrescription extends AppCompatActivity {
+public class PrescriptionFragment extends Fragment {
     RecyclerView recyclerView;
     List<DataClass> dataList;
     MyAdapter adapter;
@@ -17,13 +23,14 @@ public class ViewDrugPrescription extends AppCompatActivity {
     SearchView searchView;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_drug_prescription);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_appointment, container, false);
 
-        recyclerView = findViewById(R.id.recyclerView);
-        searchView = findViewById(R.id.search);
+        recyclerView = view.findViewById(R.id.recyclerView);
+        searchView = view.findViewById(R.id.search);
         searchView.clearFocus();
+
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -35,7 +42,7 @@ public class ViewDrugPrescription extends AppCompatActivity {
                 return true;
             }
         });
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(ViewDrugPrescription.this, 1);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(PrescriptionFragment.this, 1);
         recyclerView.setLayoutManager(gridLayoutManager);
         dataList = new ArrayList<>();
         androidData = new DataClass("Cortem", R.string.cortem1, "Shs. 5000", R.drawable.cortem1);
@@ -52,8 +59,12 @@ public class ViewDrugPrescription extends AppCompatActivity {
         dataList.add(androidData);
         androidData = new DataClass("Mebendazole", R.string.mebendazole, "Shs. 5000", R.drawable.mebendazole);
         dataList.add(androidData);
-        adapter = new MyAdapter(ViewDrugPrescription.this, dataList);
+        adapter = new MyAdapter(PrescriptionFragment.this, dataList);
         recyclerView.setAdapter(adapter);
+
+
+        return view;
+
     }
     private void searchList(String text){
         List<DataClass> dataSearchList = new ArrayList<>();

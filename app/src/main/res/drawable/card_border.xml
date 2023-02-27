@@ -6,7 +6,7 @@
         android:bottomLeftRadius="16dp"
         android:bottomRightRadius="16dp"/>
     <stroke
-        android:color="@color/black"
+        android:color="@color/dark_blue"
         android:width="2dp"
         />
 

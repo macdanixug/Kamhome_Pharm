@@ -21,8 +21,13 @@
         <entry key="..\:/AndroidStudioProjects/KamhomePharmacy/app/src/main/res/drawable/password.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProjects/KamhomePharmacy/app/src/main/res/drawable/profile.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProjects/KamhomePharmacy/app/src/main/res/drawable/reason.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/KamhomePharmacy/app/src/main/res/drawable/search.xml" value="0.107" />
+        <entry key="..\:/AndroidStudioProjects/KamhomePharmacy/app/src/main/res/drawable/search_.xml" value="0.107" />
         <entry key="..\:/AndroidStudioProjects/KamhomePharmacy/app/src/main/res/drawable/search_bkg.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/KamhomePharmacy/app/src/main/res/drawable/search_box.xml" value="0.107" />
+        <entry key="..\:/AndroidStudioProjects/KamhomePharmacy/app/src/main/res/drawable/search_edit.xml" value="0.107" />
         <entry key="..\:/AndroidStudioProjects/KamhomePharmacy/app/src/main/res/drawable/shop_drug.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/KamhomePharmacy/app/src/main/res/drawable/textarea.xml" value="0.112" />
         <entry key="..\:/AndroidStudioProjects/KamhomePharmacy/app/src/main/res/drawable/white_background.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProjects/KamhomePharmacy/app/src/main/res/layout/activity_admin_dashboard.xml" value="0.20416666666666666" />
         <entry key="..\:/AndroidStudioProjects/KamhomePharmacy/app/src/main/res/layout/activity_chat_box_dashboard.xml" value="0.1" />
@@ -33,18 +38,25 @@
         <entry key="..\:/AndroidStudioProjects/KamhomePharmacy/app/src/main/res/layout/activity_make_appointment.xml" value="0.20416666666666666" />
         <entry key="..\:/AndroidStudioProjects/KamhomePharmacy/app/src/main/res/layout/activity_profile.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProjects/KamhomePharmacy/app/src/main/res/layout/activity_shop_drugs.xml" value="0.19010416666666666" />
-        <entry key="..\:/AndroidStudioProjects/KamhomePharmacy/app/src/main/res/layout/activity_signup.xml" value="0.22" />
+        <entry key="..\:/AndroidStudioProjects/KamhomePharmacy/app/src/main/res/layout/activity_signup.xml" value="0.17962962962962964" />
         <entry key="..\:/AndroidStudioProjects/KamhomePharmacy/app/src/main/res/layout/activity_user_dashboard.xml" value="0.22" />
         <entry key="..\:/AndroidStudioProjects/KamhomePharmacy/app/src/main/res/layout/activity_view_drug_description.xml" value="0.20416666666666666" />
         <entry key="..\:/AndroidStudioProjects/KamhomePharmacy/app/src/main/res/layout/activity_view_drug_prescription.xml" value="0.25" />
+        <entry key="..\:/AndroidStudioProjects/KamhomePharmacy/app/src/main/res/layout/fragment_about.xml" value="0.20416666666666666" />
         <entry key="..\:/AndroidStudioProjects/KamhomePharmacy/app/src/main/res/layout/fragment_account.xml" value="0.20416666666666666" />
-        <entry key="..\:/AndroidStudioProjects/KamhomePharmacy/app/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key="..\:/AndroidStudioProjects/KamhomePharmacy/app/src/main/res/layout/fragment_appointment.xml" value="0.20416666666666666" />
+        <entry key="..\:/AndroidStudioProjects/KamhomePharmacy/app/src/main/res/layout/fragment_chat.xml" value="0.1712962962962963" />
+        <entry key="..\:/AndroidStudioProjects/KamhomePharmacy/app/src/main/res/layout/fragment_home.xml" value="0.17222222222222222" />
         <entry key="..\:/AndroidStudioProjects/KamhomePharmacy/app/src/main/res/layout/fragment_prescription.xml" value="0.20416666666666666" />
         <entry key="..\:/AndroidStudioProjects/KamhomePharmacy/app/src/main/res/layout/fragment_profile.xml" value="0.20416666666666666" />
+        <entry key="..\:/AndroidStudioProjects/KamhomePharmacy/app/src/main/res/layout/fragment_settings.xml" value="0.20416666666666666" />
+        <entry key="..\:/AndroidStudioProjects/KamhomePharmacy/app/src/main/res/layout/fragment_share.xml" value="0.17777777777777778" />
+        <entry key="..\:/AndroidStudioProjects/KamhomePharmacy/app/src/main/res/layout/fragment_shop_drug.xml" value="0.20416666666666666" />
         <entry key="..\:/AndroidStudioProjects/KamhomePharmacy/app/src/main/res/layout/header_menu.xml" value="0.20416666666666666" />
         <entry key="..\:/AndroidStudioProjects/KamhomePharmacy/app/src/main/res/layout/message_design.xml" value="0.1" />
-        <entry key="..\:/AndroidStudioProjects/KamhomePharmacy/app/src/main/res/layout/recycler_item.xml" value="0.22" />
+        <entry key="..\:/AndroidStudioProjects/KamhomePharmacy/app/src/main/res/layout/recycler_item.xml" value="0.17962962962962964" />
         <entry key="..\:/AndroidStudioProjects/KamhomePharmacy/app/src/main/res/layout/slider_item.xml" value="0.20416666666666666" />
+        <entry key="..\:/AndroidStudioProjects/KamhomePharmacy/app/src/main/res/layout/toolbar_content.xml" value="0.203125" />
         <entry key="..\:/AndroidStudioProjects/KamhomePharmacy/app/src/main/res/menu/admin_main_menu.xml" value="0.20416666666666666" />
         <entry key="..\:/AndroidStudioProjects/KamhomePharmacy/app/src/main/res/menu/bottom_menu.xml" value="0.25" />
         <entry key="..\:/AndroidStudioProjects/KamhomePharmacy/app/src/main/res/menu/header_menu.xml" value="0.20416666666666666" />

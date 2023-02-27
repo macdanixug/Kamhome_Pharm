@@ -1,25 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <group android:checkableBehavior="single">
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn = "navigation_view">
+    <group
+        android:checkableBehavior="single">
         <item
-            android:id="@+id/user_nav_home"
+            android:id="@+id/nav_shopdrug"
+            android:icon="@drawable/shop_drug"
+            android:title="Shop Drug"/>
+        <item
+            android:id="@+id/nav_prescription"
+            android:icon="@drawable/desc_drug"
+            android:title="View Prescription"/>
+        <item
+            android:id="@+id/nav_appointment"
+            android:icon="@drawable/make_appointment"
+            android:title="Make Appointmnent"/>
+        <item
+            android:id="@+id/nav_chat"
             android:icon="@drawable/chat"
-            android:title="Home" />
+            android:title="Chat With Us"/>
         <item
-            android:id="@+id/user_nav_pharmacies"
-            android:icon="@drawable/chat"
-            android:title="Pharmacies" />
-        <item
-            android:id="@+id/user_nav_chat"
-            android:icon="@drawable/chat"
-            android:title="Chat" />
-        <item
-            android:id="@+id/user_nav_settings"
-            android:icon="@drawable/chat"
-            android:title="Settings" />
-        <item
-            android:id="@+id/user_nav_profile"
-            android:icon="@drawable/fullname"
-            android:title="Profile" />
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/profile"
+            android:title="Profile"/>
     </group>
+    <item
+        android:title="">
+        <menu>
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/logout"
+                android:title="Logout"/>
+            <item
+                android:id="@+id/about_developer"
+                android:icon="@drawable/fullname"
+                android:title="About developer"/>
+        </menu>
+    </item>
 </menu>

@@ -1,78 +1,77 @@
 package com.example.kamhomepharmacy;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.MenuItem;
-import android.widget.Toast;
-
-import com.google.android.material.navigation.NavigationView;
+import android.view.View;
 
 public class AdminDashboard extends AppCompatActivity {
-    DrawerLayout drawerLayout;
-    NavigationView navigationview;
-    Toolbar toolbar;
-    ActionBarDrawerToggle actionBarDrawerToggle;
+
+    CardView viewDesc, makeAppointment, profile, logout, chat, shopDrug;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_dashboard);
 
-        toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        viewDesc = findViewById(R.id.viewDesc);
+        makeAppointment = findViewById(R.id.makeAppointment);
+        profile = findViewById(R.id.profile);
+        logout = findViewById(R.id.logout);
+        chat = findViewById(R.id.chat);
+        shopDrug = findViewById(R.id.shopDrug);
 
-        drawerLayout = findViewById(R.id.drawerlayout);
-        navigationview = findViewById(R.id.navigationView);
-
-        actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.open_menu, R.string.close_menu);
-        drawerLayout.addDrawerListener(actionBarDrawerToggle);
-        actionBarDrawerToggle.syncState();
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-        navigationview.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+        viewDesc.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.user_nav_home:
-                        Log.i("MENU_DRAWER_TAG", "Home is selected");
-                        drawerLayout.closeDrawer(GravityCompat.START);
-                        startActivity(new Intent(AdminDashboard.this, Login.class));
-                        break;
-                    case R.id.user_nav_settings:
-                        Log.i("MENU_DRAWER_TAG", "settings is selected");
-                        drawerLayout.closeDrawer(GravityCompat.START);
-                        startActivity(new Intent(AdminDashboard.this, Signup.class));
-                        break;
-                    case R.id.user_nav_chat:
-                        drawerLayout.closeDrawer(GravityCompat.START);
-                        break;
-                    case R.id.user_nav_profile:
-                        drawerLayout.closeDrawer(GravityCompat.START);
-                        break;
-                    case R.id.user_nav_pharmacies:
-                        // Log.i("MENU_DRAWER_TAG","Pharmacies selected");
-                        drawerLayout.closeDrawer(GravityCompat.START);
-                        break;
-                }
-                return true;
+            public void onClick(View view) {
+                Intent intent = new Intent(AdminDashboard.this, ViewDrugPrescription.class);
+                startActivity(intent);
+            }
+        });
+        makeAppointment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AdminDashboard.this, MakeAppointment.class);
+                startActivity(intent);
             }
         });
 
-    }
+        Intent intent = getIntent();
+        String nameUser = intent.getStringExtra("name");
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (actionBarDrawerToggle.onOptionsItemSelected(item)) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AdminDashboard.this, Profile.class);
+                intent.putExtra("name", nameUser);
+                startActivity(intent);
+            }
+        });
+
+        shopDrug.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AdminDashboard.this, ShopDrugs.class);
+                startActivity(intent);
+            }
+        });
+
+        chat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AdminDashboard.this, ChatBoxDashboard.class);
+                startActivity(intent);
+            }
+        });
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AdminDashboard.this, Login.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }

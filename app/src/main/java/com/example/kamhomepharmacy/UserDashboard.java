@@ -1,78 +1,78 @@
 package com.example.kamhomepharmacy;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+import android.view.MenuItem;
 
-public class UserDashboard extends AppCompatActivity {
+import com.google.android.material.navigation.NavigationView;
 
-    CardView viewDesc, makeAppointment,profile,logout,chat,shopDrug;
+public class UserDashboard extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+
+    private DrawerLayout drawerLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_dashboard);
 
-        viewDesc = findViewById(R.id.viewDesc);
-        makeAppointment = findViewById(R.id.makeAppointment);
-        profile = findViewById(R.id.profile);
-        logout = findViewById(R.id.logout);
-        chat = findViewById(R.id.chat);
-        shopDrug = findViewById(R.id.shopDrug);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
-        viewDesc.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(UserDashboard.this, ViewDrugPrescription.class);
-                startActivity(intent);
-            }
-        });
-        makeAppointment.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(UserDashboard.this,MakeAppointment.class);
-                startActivity(intent);
-            }
-        });
+        drawerLayout = findViewById(R.id.drawer_layout);
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
 
-        Intent intent = getIntent();
-        String nameUser = intent.getStringExtra("name");
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open_menu,
+                R.string.close_menu);
 
-        profile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(UserDashboard.this,Profile.class);
-                intent.putExtra("name",nameUser);
-                startActivity(intent);
-            }
-        });
-
-        shopDrug.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(UserDashboard.this,ShopDrugs.class);
-                startActivity(intent);
-            }
-        });
-
-        chat.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(UserDashboard.this,ChatBoxDashboard.class);
-                startActivity(intent);
-            }
-        });
-        logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ShopDrugFragment()).commit();
+            navigationView.setCheckedItem(R.id.nav_shopdrug);
+        }
+    }
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.nav_shopdrug:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ShopDrugFragment()).commit();
+                break;
+            case R.id.nav_prescription:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new PrescriptionFragment()).commit();
+                break;
+            case R.id.nav_appointment:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new AppointmentFragment()).commit();
+                break;
+            case R.id.nav_chat:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ChatFragment()).commit();
+                break;
+            case R.id.nav_profile:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ProfileFragment()).commit();
+                break;
+            case R.id.nav_logout:
                 Intent intent = new Intent(UserDashboard.this,Login.class);
                 startActivity(intent);
-            }
-        });
-
-
+                finish();
+                break;
+        }
+        drawerLayout.closeDrawer(GravityCompat.START);
+        return true;
+    }
+    @Override
+    public void onBackPressed() {
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
     }
 }
