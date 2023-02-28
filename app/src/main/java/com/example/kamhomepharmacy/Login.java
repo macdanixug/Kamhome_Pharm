@@ -22,9 +22,6 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import android.widget.Toast;
 
-
-
-
 public class Login extends AppCompatActivity {
 
     EditText loginUsername, loginPassword;
@@ -44,6 +41,8 @@ public class Login extends AppCompatActivity {
         signupRedirectText = findViewById(R.id.signupRedirectText);
 
         mAuth = FirebaseAuth.getInstance();
+
+        FirebaseUser user = mAuth.getCurrentUser();
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override

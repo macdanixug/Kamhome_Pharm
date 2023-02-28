@@ -56,32 +56,32 @@ public class ChatFragment extends Fragment {
         messageRef = FirebaseDatabase.getInstance().getReference().child("messages");
         currentUser = FirebaseAuth.getInstance().getCurrentUser();
 
-        send_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String messageContent = message_edit_text.getText().toString().trim();
-                if (!TextUtils.isEmpty(messageContent)) {
-                    String dateTime = DateFormat.getDateTimeInstance().format(new Date());
-                    String messageId = messageRef.push().getKey();
-                    String email = getIntent().getStringExtra("email");
-                    messageRef.child(messageId).child("content").setValue(messageContent);
-                    messageRef.child(messageId).child("timestamp").setValue(dateTime);
-                    messageRef.child(messageId).child("sender").setValue(email)
-                            .addOnCompleteListener(new OnCompleteListener<Void>() {
-                                @Override
-                                public void onComplete(@NonNull Task<Void> task) {
-                                    if (task.isSuccessful()) {
-                                        Toast.makeText(getActivity(), "Message Successfully Sent ", Toast.LENGTH_SHORT).show();
-                                        message_edit_text.setText("");
-
-                                    } else {
-                                        Toast.makeText(getActivity(), "Failed to send message", Toast.LENGTH_SHORT).show();
-                                    }
-                                }
-                            });
-                }
-            }
-        });
+//        send_button.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                String messageContent = message_edit_text.getText().toString().trim();
+//                if (!TextUtils.isEmpty(messageContent)) {
+//                    String dateTime = DateFormat.getDateTimeInstance().format(new Date());
+//                    String messageId = messageRef.push().getKey();
+//                    String email = getIntent().getStringExtra("email");
+//                    messageRef.child(messageId).child("content").setValue(messageContent);
+//                    messageRef.child(messageId).child("timestamp").setValue(dateTime);
+//                    messageRef.child(messageId).child("sender").setValue(email)
+//                            .addOnCompleteListener(new OnCompleteListener<Void>() {
+//                                @Override
+//                                public void onComplete(@NonNull Task<Void> task) {
+//                                    if (task.isSuccessful()) {
+//                                        Toast.makeText(getActivity(), "Message Successfully Sent ", Toast.LENGTH_SHORT).show();
+//                                        message_edit_text.setText("");
+//
+//                                    } else {
+//                                        Toast.makeText(getActivity(), "Failed to send message", Toast.LENGTH_SHORT).show();
+//                                    }
+//                                }
+//                            });
+//                }
+//            }
+//        });
 
         adapter = new RecyclerViewAdapter(getActivity(),list);
         LinearLayoutManager llm = new LinearLayoutManager(getActivity(),RecyclerView.VERTICAL,false);

@@ -17,6 +17,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.auth.FirebaseUser;
+
 
 public class ProfileFragment extends Fragment {
     TextView profileName, profileEmail, profileUsername, profilePassword;
@@ -49,6 +51,8 @@ public class ProfileFragment extends Fragment {
     }
 
     public void passUserData(){
+
+//        Intent intent = new Intent(getActivity(), Login.class);
         Intent intent = getIntent();
         String nameUser = intent.getStringExtra("name");
 
@@ -82,5 +86,7 @@ public class ProfileFragment extends Fragment {
 
 
     }
+
+
 
 }

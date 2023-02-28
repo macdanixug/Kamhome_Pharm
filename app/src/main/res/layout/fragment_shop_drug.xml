@@ -65,7 +65,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@color/white"
-                    android:src="@drawable/image_1"
+                    android:src="@drawable/kampharm"
                     android:scaleType="centerCrop"
                     />
 
@@ -82,7 +82,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@color/white"
-                    android:src="@drawable/image_2"
+                    android:src="@drawable/kampharm"
                     android:scaleType="centerCrop"
                     />
 
@@ -99,7 +99,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@color/white"
-                    android:src="@drawable/image_3"
+                    android:src="@drawable/kampharm"
                     android:scaleType="centerCrop"
                     />
 
